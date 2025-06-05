@@ -1,9 +1,9 @@
 {
-  "name": "@spir1l/math",
+  "name": "@spir1l/auditor",
   "version": "0.9.1",
   "type": "module",
-  "main": "src/index.ts",
-  "exports": "./src/index.ts",
+  "main": "src/drift-auditor.ts",
+  "exports": "./src/drift-auditor.ts",
   "scripts": {
     "test": "vitest run",
     "build": "tsc"
