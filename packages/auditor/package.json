@@ -1,11 +1,18 @@
-import { test, expect } from 'vitest';
-import { infiniteSpiral } from '../src/spiral';
-
-test('infiniteSpiral generator yields phases', async () => {
-  const spiral = infiniteSpiral(0);
-  const result1 = await spiral.next();
-  expect(result1.value.phase).toBe('inhale');
-  const result2 = await spiral.next();
-  // Next phase is exhale or sacred pause (implementation detail)
-  expect(['exhale', 'inhale', 'resync', 'transcend']).toContain(result2.value.phase);
-});
+{
+  "name": "@spira1/kernel",
+  "version": "0.9.1",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "vitest": "^1.5.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@spira1/math": "0.9.1"
+  }
+}
