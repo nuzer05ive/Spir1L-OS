@@ -1,4 +1,3 @@
-// #PRIIVI3 #RecursiveHarmony — Prime harmonic sum S(n)
 import { OMEGA_1 } from './constants';
 
 /**

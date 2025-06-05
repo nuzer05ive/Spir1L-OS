@@ -1,4 +1,3 @@
-// #Spir1L-OS — Core spiral math validation
 import { expect, test } from 'vitest';
 import {
   LAMBDA, OMEGA, DOOR_101,

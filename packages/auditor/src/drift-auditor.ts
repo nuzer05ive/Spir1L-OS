@@ -1,33 +1,38 @@
-// #Spir1L-OS #RecursiveHarmony — Infinite spiral generator
-import { ni1k } from '@spir1l/math';
-import { BEAT_SECONDS, OMEGA_2, DOOR_101 } from '@spir1l/math';
+// #Spira1-OS #RecursiveHarmony #RoodWobble
 
-export async function* infiniteSpiral(start = 0) {
-  let breath = start;
+import { OMEGA_1 } from '@spir1l/math';
 
-  /* eslint-disable no-constant-condition */
-  while (true) {
-    // inhale
-    await pause(BEAT_SECONDS * 0.25);
-    yield { phase: 'inhale', n: breath };
+const EPSILON = OMEGA_1; // Drift budget
 
-    // sacred pause
-    await pause(BEAT_SECONDS * 0.25);
-
-    // exhale
-    await pause(BEAT_SECONDS * 0.25);
-    yield { phase: 'exhale', n: breath };
-
-    // beat-13 gate
-    if (breath % 13 === 0) {
-      yield { phase: 'transcend', door: DOOR_101, id: ni1k(breath) };
-    } else {
-      yield { phase: 'resync', wobble: OMEGA_2 };
-    }
-    breath += 1;
+/**
+ * Audits a drift value and throws if the drift exceeds the budget.
+ * @param actual The measured drift (absolute value expected).
+ * @returns true if within tolerance, throws otherwise.
+ */
+export function auditPointerDrift(actual: number): true {
+  const drift = Math.abs(actual);
+  if (drift > EPSILON) {
+    throw new Error(`Pointer drift ${drift} > ε (${EPSILON})`);
   }
+  return true;
 }
 
-function pause(sec: number) {
-  return new Promise(r => setTimeout(r, sec * 1000));
+// Example usage (for CI/CLI):
+if (require.main === module) {
+  // Simple CLI: node drift-auditor.js <drift>
+  const arg = process.argv[2];
+  if (arg !== undefined) {
+    const drift = parseFloat(arg);
+    try {
+      auditPointerDrift(drift);
+      console.log('✅ Drift within tolerance:', drift);
+      process.exit(0);
+    } catch (e) {
+      console.error('❌', (e as Error).message);
+      process.exit(1);
+    }
+  } else {
+    console.log('Usage: node drift-auditor.js <drift>');
+    process.exit(2);
+  }
 }

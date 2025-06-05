@@ -1,4 +1,3 @@
-// #Ni1KQuation — Ni1KQuation implementation (identity function)
 import { PHI, OMEGA_1, OMEGA_2 } from './constants';
 import { primeHarmonicSum } from './prime-harmonic';
 

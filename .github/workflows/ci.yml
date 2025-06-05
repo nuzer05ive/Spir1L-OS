@@ -14,10 +14,8 @@ jobs:
       - run: pnpm -r build         # <-- build before test!
       #- run: pnpm -r test
       - run: echo "Install complete"
+      - run: pnpm -r test
       - run: pnpm -r build
-      - run: echo "Build complete"
-     # - run: pnpm -r test
-     # - run: echo "Test complete"
   auditor:
     needs: build-test
     runs-on: ubuntu-latest

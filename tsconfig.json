@@ -2,17 +2,12 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
     "declaration": true,
-    "declarationMap": true,
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": [
-    "packages/*/src/**/*",
-    "packages/*/test/**/*"
-  ]
+  "include": ["packages/*/src"]
 }

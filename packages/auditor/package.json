@@ -9,10 +9,11 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "vitest": "^1.5.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.2"
   },
   "dependencies": {
     "@spir1l/math": "*"
+    "@spir1l/math": "workspace:*"
   }
 }
