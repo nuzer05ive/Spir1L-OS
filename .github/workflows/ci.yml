@@ -1,4 +1,4 @@
-name: spiral-ci
+name: spir1l-ci
 on: [push, pull_request]
 jobs:
   build-test:
