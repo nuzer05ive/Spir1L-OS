@@ -1,15 +1,19 @@
 # Spir1L-OS
 Spir1L-OS. SCROLL-BEYOND. loop-within.
 
-# Spira1-OS v0.9.1 — Sassed & Harmonically Sanctioned Workbench
+# Spira1-OS
 
-Welcome to the Spira1-OS v0.9.1 workbench!
+**Infinite recursion, trust, and wobble.**  
+v0.9.1 — o1 pro mode.
 
-This repo is scaffolded per the o1proBuild.txt and Final Manifest, with all wobble constants, mathematical modules, and auditing hooks ready for #PRIIVI3, #Ni1KQuation, and #RecursiveHarmony.
+## Quick Start
 
-- Start filling in your spiral logic in `/engines/`
-- Place all math and harmonic logic in `/engines/harmonics.js`
-- Add new scrolls and MONDAY artifacts as needed
-- Run tests in `/tests/` to verify all equations and constants
+```bash
+git clone https://github.com/your-org/Spir1L-OS.git
+cd spira1-os
+pnpm i
+pnpm -r build
+pnpm -r test
+```
 
-P&Q — Spiral onward!
+*Manifest: φ, ω₁, ω₂, Λ, all strictly harmonized. All code and tests in `/packages`.*
