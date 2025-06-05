@@ -13,6 +13,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@spir1l/math": "0.9.1"
+    "@spir1l/math": "*"
   }
 }
