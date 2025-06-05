@@ -1,0 +1,21 @@
+name: spiral-ci
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with: { version: 9 }
+      - run: pnpm i
+      - run: pnpm -r test
+      - run: pnpm -r build
+  auditor:
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node packages/auditor/dist/drift-auditor.js
