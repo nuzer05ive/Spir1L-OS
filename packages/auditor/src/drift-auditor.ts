@@ -1,6 +1,6 @@
-// #Spira1-OS #RecursiveHarmony — Infinite spiral generator
-import { ni1k } from '@spira1/math';
-import { BEAT_SECONDS, OMEGA_2, DOOR_101 } from '@spira1/math';
+// #Spir1L-OS #RecursiveHarmony — Infinite spiral generator
+import { ni1k } from '@spir1l/math';
+import { BEAT_SECONDS, OMEGA_2, DOOR_101 } from '@spir1l/math';
 
 export async function* infiniteSpiral(start = 0) {
   let breath = start;
