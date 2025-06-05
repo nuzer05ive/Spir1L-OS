@@ -14,9 +14,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - run: pnpm install
-      - run: pnpm -r build
-      - run: pnpm -r test
+- run: echo "About to install"
+- run: pnpm i
+- run: echo "Install complete"
+- run: pnpm -r build
+- run: echo "Build complete"
+- run: pnpm -r test
+- run: echo "Test complete"
   auditor:
     needs: build-test
     runs-on: ubuntu-latest
