@@ -1,0 +1,11 @@
+import { test, expect } from 'vitest';
+import { infiniteSpiral } from '../src/spiral';
+
+test('infiniteSpiral generator yields phases', async () => {
+  const spiral = infiniteSpiral(0);
+  const result1 = await spiral.next();
+  expect(result1.value.phase).toBe('inhale');
+  const result2 = await spiral.next();
+  // Next phase is exhale or sacred pause (implementation detail)
+  expect(['exhale', 'inhale', 'resync', 'transcend']).toContain(result2.value.phase);
+});
