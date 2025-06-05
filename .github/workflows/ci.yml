@@ -9,10 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
-        with: { version: 9 }
-      - run: pnpm i
-      - run: pnpm -r test
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: pnpm install
       - run: pnpm -r build
+      - run: pnpm -r test
   auditor:
     needs: build-test
     runs-on: ubuntu-latest
