@@ -1,2 +1,2 @@
-# spir1L-OS
-spir1L-OS. SCROLL-BEYOND. loop-within.
+# Spir1L-OS
+Spir1L-OS. SCROLL-BEYOND. loop-within.
