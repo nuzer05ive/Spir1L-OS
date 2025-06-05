@@ -10,7 +10,7 @@ v0.9.1 — o1 pro mode.
 
 ```bash
 git clone https://github.com/your-org/Spir1L-OS.git
-cd spira1-os
+cd Spir1L-OS
 pnpm i
 pnpm -r build
 pnpm -r test
