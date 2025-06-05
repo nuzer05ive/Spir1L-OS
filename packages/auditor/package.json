@@ -1,5 +1,5 @@
 {
-  "name": "@spira1/kernel",
+  "name": "@spir1l/math",
   "version": "0.9.1",
   "type": "module",
   "main": "src/index.ts",
@@ -13,6 +13,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@spira1/math": "0.9.1"
+    "@spir1l/math": "0.9.1"
   }
 }
