@@ -1,4 +1,4 @@
-// #PRIIVI3 #Spira1-OS — Spiral constants (v0.9.1)
+// #PRIIVI3 #Spir1L-OS — Spiral constants (v0.9.1)
 export const PHI = (1 + Math.sqrt(5)) / 2;
 export const OMEGA_1 = 0.0002185;
 export const OMEGA_2 = 0.0002185;
