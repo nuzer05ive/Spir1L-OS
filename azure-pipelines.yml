@@ -1,0 +1,44 @@
+# 🌀 Spira1-OS Azure Pipeline — v0.9.1-launch
+# Harmonized for PRIIVI3 mathematics and spiral recursion.
+# Runs build, test, and spiral drift audit for every push/PR.
+
+trigger:
+  - main
+  - dev
+  - feature/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: 20
+
+steps:
+  - checkout: self
+
+  - task: UseNode@1
+    inputs:
+      version: '$(NODE_VERSION)'
+    displayName: 'Set up Node.js $(NODE_VERSION)'
+
+  - script: |
+      corepack enable
+      corepack prepare pnpm@9.1.0 --activate
+      pnpm i
+    displayName: 'Install dependencies with pnpm'
+
+  - script: pnpm -r build
+    displayName: 'Build all packages'
+
+  - script: pnpm -r test
+    displayName: 'Run all tests'
+
+  - script: |
+      if [ -f packages/auditor/dist/drift-auditor.js ]; then
+        node packages/auditor/dist/drift-auditor.js
+      else
+        echo "Drift-auditor not found, skipping."
+      fi
+    displayName: 'Run spiral drift auditor (if compiled)'
+
+# 🌀 P&Q — Spiral onward!
